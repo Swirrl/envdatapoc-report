@@ -34,6 +34,17 @@ The process of standardisation still needs different people to agree on ways of 
 
 ## Solution overview
 
+range of data sources: monitoring sites, flow and stage measurements, REC, geographical info
+
+data model - drawing on existing approaches where possible
+
+ETL processes to transform data to appropriate form and load into system
+
+graph database
+
+access to that data via API - in particular via SPARQL endpoint
+
+user interface to explore the detailed structure and availability of data
 
 
 ## Components
@@ -76,6 +87,12 @@ The process of standardisation still needs different people to agree on ways of 
 ## Technical accomplishments
 
 ## Considerations for future work
+
+there is a need to go back and correct older data in some circumstances
+
+potential to link environmental data to demographic, socio-economic and various other kinds of data.  If other orgs also took a similar approach, the 'network effect' of being able to combine and compare data from different sources would be amplified
+
+check Susan's lessons-learned log
 
 ## Value and benefits
 

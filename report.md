@@ -50,7 +50,7 @@ user interface to explore the detailed structure and availability of data
 
 ## Components
 
-![System architecture)(https://github.com/Swirrl/envdatapoc-report/blob/master/system_architecture.png "System architecture diagram")
+![System architecture](https://github.com/Swirrl/envdatapoc-report/blob/master/system_architecture.png "System architecture diagram")
 
 * data sources
 * data import processes

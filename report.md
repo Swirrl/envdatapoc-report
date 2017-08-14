@@ -16,9 +16,27 @@
 * When someone looks up a URI, provide useful information, using the standards
 * Include links to other URIs. so that they can discover more things.
 
+exploiting the web, identifiers - for entities of interest and for properties/classes/concepts to describe the structure and meaning of data
+
+global identifiers that make use of the mechanisms of the web to look up information about them - and so let one piece of data easily link to another
+
+this supports integration of data from different sources by making connections between them
+
+the process of standardisation still needs different people to agree on ways of identifying and describing their data, but this provides a mechanism for the connections
+
+
 ## Solution overview
 
+
+
 ## Components
+
+* data sources
+* data import processes
+* database
+* user interface
+* APIs
+* visualisation application
 
 ## Application layer (other apps)
 

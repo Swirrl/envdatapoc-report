@@ -34,6 +34,7 @@ The process of standardisation still needs different people to agree on ways of 
 
 ## Solution overview
 
+The approach ta
 range of data sources: monitoring sites, flow and stage measurements, REC, geographical info
 
 data model - drawing on existing approaches where possible
@@ -49,6 +50,8 @@ user interface to explore the detailed structure and availability of data
 
 ## Components
 
+
+
 * data sources
 * data import processes
 * database
@@ -57,6 +60,12 @@ user interface to explore the detailed structure and availability of data
 * visualisation application
 
 ## Application layer (other apps)
+
+The principle of the approach taken is that a consistent collection of data, available in machine-readable form through an API, can support a range of different applications: each selecting relevant data and presenting it in a way that suits a particular purpose or target audience.
+
+In addition to the main map-based visualisation described in the previous section, other experimental applications have been built on top of the proof of concept data system, including:
+
+* ...list examples
 
 # Data samples
 

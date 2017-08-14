@@ -9,6 +9,13 @@
 
 ## Linked data approach
 
+'Linked Data' is the name given to a standards-based approach to representing and disseminating data using the World Wide Web.  The [principles of Linked Data](https://www.w3.org/DesignIssues/LinkedData.html) were first documented by Tim Berners-Lee in 2006.  The four guiding principles of Linked Data are:
+
+* Use URIs as names for things.
+* Use HTTP URIs so that people can look up those names.
+* When someone looks up a URI, provide useful information, using the standards
+* Include links to other URIs. so that they can discover more things.
+
 ## Solution overview
 
 ## Components

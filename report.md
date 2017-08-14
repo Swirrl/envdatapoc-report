@@ -34,7 +34,17 @@ The process of standardisation still needs different people to agree on ways of 
 
 ## Solution overview
 
-The approach ta
+
+The technical solution implemented in the proof of concept is based around Swirrl's 'PublishMyData' software platform.  This consists of a data store, various tools for loading data and managing the data collection, as well as user interface and API features for viewing and extracting data.
+
+This is used to deliver the web interface to the data at [http://envdatapoc.co.nz](http://envdatapoc.co.nz).
+
+This is supplemented by a visualisation application, custom-built for this project using the RShiny web application framework for the 'R' programming language.  The visualisation shows how data can be extracted from the Linked Data platform and presented in a user-friendly way.  It can be viewed at [https://swirrl.shinyapps.io/NZ_River_Flow/](https://swirrl.shinyapps.io/NZ_River_Flow/).
+
+The source code for the visualisation application is available in this [Github repository](https://github.com/Swirrl/nz_shiny_river_app).   (TO DO: that repository is still private, but could be made public when we are ready to publish the report).
+
+cloud environment, Ubuntu 16.04LTS, Google Cloud Platform
+
 range of data sources: monitoring sites, flow and stage measurements, REC, geographical info
 
 data model - drawing on existing approaches where possible
@@ -49,6 +59,8 @@ user interface to explore the detailed structure and availability of data
 
 
 ## Components
+
+The diagram below illustrates the architecture of the PublishMyData system and hence of the technical solution used in the proof of concept. 
 
 ![System architecture](https://github.com/Swirrl/envdatapoc-report/blob/master/system_architecture.png "System architecture diagram")
 

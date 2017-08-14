@@ -13,16 +13,23 @@
 
 * Use URIs as names for things.
 * Use HTTP URIs so that people can look up those names.
-* When someone looks up a URI, provide useful information, using the standards
+* When someone looks up a URI, provide useful information, using the standards (RDF and SPARQL)
 * Include links to other URIs. so that they can discover more things.
 
-exploiting the web, identifiers - for entities of interest and for properties/classes/concepts to describe the structure and meaning of data
+Using the Linked Data approach, all entities of interest, as well as the attributes used to describe them, are assigned a URI - a globally unique web-accessible identifier.  The characteristics of a thing are described as a series of attributes and values.  URIs can appear as the object of a subject-property-object 'triple' as well as the subject, so describing relationships between different things.  The [Resource Description Framework (RDF)](https://www.w3.org/RDF/) is a simple but powerful set of standards for representing data in this way.  [SPARQL](https://www.w3.org/TR/sparql11-query/) is a standardised query language for data represented as RDF.
 
-global identifiers that make use of the mechanisms of the web to look up information about them - and so let one piece of data easily link to another
+The benefits of using Linked Data are:
+* it is well suited to making machine-readable data available using the web
+* it is based on well-established clearly documented open standards, so anyone can use it and it is supported by a variety of open source and proprietary software tools
+* it is well suited to data integration: making it easy to combine and compare data from different sources
 
-this supports integration of data from different sources by making connections between them
+A common example of data integration using Linked Data is combining data from different organisations about a single place.  With well-defined identifiers for locations or areas, and standard patterns for representing observational or statistical data, then many organisations can publish what they know about a place in an interoperable way.  If you want to investigate the relationships between employment and health, or the environment and different approaches to farming, then it becomes much easier to pull together the information you need.
 
-the process of standardisation still needs different people to agree on ways of identifying and describing their data, but this provides a mechanism for the connections
+Linked Data also provides a natural mechanism for documenting data, describing its provenance, licensing terms and other key information generally referred to as 'metadata'. 
+
+Making data available in this form can sometimes require extra effort from a data publisher, in order to describe their data precisely in a structured way: however this effort pays back every time someone uses the data, because a user of the data can access it with less effort and more confidence.
+
+The process of standardisation still needs different people to agree on ways of identifying and describing their data, but Linked Data provides a mechanism for easy re-use of other people's data; and making data interoperable can often build on standards work that has already been done.
 
 
 ## Solution overview

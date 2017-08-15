@@ -43,19 +43,23 @@ This is supplemented by a visualisation application, custom-built for this proje
 
 The source code for the visualisation application is available in this [Github repository](https://github.com/Swirrl/nz_shiny_river_app).   (TO DO: that repository is still private, but could be made public when we are ready to publish the report).
 
-cloud environment, Ubuntu 16.04LTS, Google Cloud Platform
+The PublishMyData system runs on a single Linux virtual server, part of the Google Cloud Platform.  The RShiny application is hosted via the Shinyapps.io service and retrieves its data through the public API of the PublishMyData service.
 
-range of data sources: monitoring sites, flow and stage measurements, REC, geographical info
+The system holds a range of data: river monitoring sites locations and attributes; river flow and stage measurements at those sites; the River Environment Classification (REC) for all river reaches in New Zealand; and a range of supporting geographical information, such as region boundaries, water management zone boundaries and meshblock boundaries.
 
-data model - drawing on existing approaches where possible
+These data were all taken from existing publicly available sources and transformed into RDF using Extract-Transform-Load software 'pipelines', implemented using the open source ['Grafter' library](http://grafter.org). 
 
-ETL processes to transform data to appropriate form and load into system
+The sources are available in a range of formats: monitoring site data is provided by each participating regional council as a WFS endpoint, flow and monitoring data are provided as WaterML2 endpoints, the REC is available as a CSV file and the boundaries were provided as ESRI Shapefiles.
 
-graph database
+In some cases these were run as a one-off process.  The flow and stage data loading pipelines are run repeatedly on a schedule, in order to keep the cache of data up to date.
 
-access to that data via API - in particular via SPARQL endpoint
+Once stored in the PublishMyData platform, the data is made available via a [SPARQL endpoint](http://envdatapoc.co.nz/sparql) supporting retrieval of data for use in other contexts.
 
-user interface to explore the detailed structure and availability of data
+The data can also be browsed and downloaded via a user interface. 
+
+Authorised authenticated users have access to an administration user interface where they can add, edit or delete parts of the data and metadata collection.
+
+
 
 
 ## Components
@@ -71,6 +75,9 @@ The diagram below illustrates the architecture of the PublishMyData system and h
 * APIs
 * visualisation application
 
+(a graph database using the [Stardog](http://www.stardog.com) software),
+
+
 ## Application layer (other apps)
 
 The principle of the approach taken is that a consistent collection of data, available in machine-readable form through an API, can support a range of different applications: each selecting relevant data and presenting it in a way that suits a particular purpose or target audience.
@@ -80,6 +87,8 @@ In addition to the main map-based visualisation described in the previous sectio
 * ...list examples
 
 # Data samples
+
+## Approach to data modelling
 
 ## River monitoring sites
 

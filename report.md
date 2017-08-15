@@ -118,11 +118,17 @@ In addition to the main map-based visualisation described in the previous sectio
 
 ## Considerations for future work
 
-there is a need to go back and correct older data in some circumstances
+there is a need to go back and correct older data in some circumstances - while that is possible with the current system, the data import pipelines could be configured to make that easier.
 
 potential to link environmental data to demographic, socio-economic and various other kinds of data.  If other orgs also took a similar approach, the 'network effect' of being able to combine and compare data from different sources would be amplified
 
 check Susan's lessons-learned log
+
+the fact that all 4 participating regions were using consistent OGC standards for delivery of the monitoring sites and flow measurements data meant that integrating the different sources was relatively easy.  Nonetheless, slight variations in the implementations of those standards by the different councils (or their software suppliers) meant that the data import processes had to deal with special cases per region.
+
+potential value of geosparql enabled database --> probs with generalisation of meshblock geometries
+
+
 
 ## Value and benefits
 

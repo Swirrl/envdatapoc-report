@@ -7,7 +7,19 @@
 
 # Architecture
 
-## Linked data approach
+The proof of concept was based around application of the Linked Data approach, to implement a standards-based approach to disseminating data via the Web.  The overall solution incorporated a number of components:
+
+* standard vocabularies
+* persistent URIs
+* metadata
+* a software platform to store and present data
+* transformation software to prepare and load data to the platform
+* a software application to present an easily understandable, interactive view of the data
+
+This section starts by briefly summarising the Linked Data approach and goes on to summarise the role of each of the above components in the overall solution.
+
+
+## Linked Data approach
 
 'Linked Data' is the name given to a standards-based approach to representing and disseminating data using the World Wide Web.  The [principles of Linked Data](https://www.w3.org/DesignIssues/LinkedData.html) were first documented by Tim Berners-Lee in 2006.  The four guiding principles of Linked Data are:
 
@@ -32,7 +44,7 @@ Making data available in this form can sometimes require extra effort from a dat
 The process of standardisation still needs different people to agree on ways of identifying and describing their data, but Linked Data provides a mechanism for easy re-use of other people's data; and making data interoperable can often build on standards work that has already been done.
 
 
-## Solution overview
+## Software platform overview
 
 
 The technical solution implemented in the proof of concept is based around Swirrl's 'PublishMyData' software platform.  This consists of a data store, various tools for loading data and managing the data collection, as well as user interface and API features for viewing and extracting data.
@@ -62,7 +74,7 @@ Authorised authenticated users have access to an administration user interface w
 
 
 
-## Components
+## Software Components
 
 The diagram below illustrates the architecture of the PublishMyData system and hence of the technical solution used in the proof of concept. 
 

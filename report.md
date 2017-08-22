@@ -128,22 +128,27 @@ The diagram below illustrates the architecture of the PublishMyData system and h
 ![System architecture](https://github.com/Swirrl/envdatapoc-report/blob/master/system_architecture.png "System architecture diagram")
 
 * data sources
-* data import processes
+* data import processes (discussed in more detail in the next section)
 * database
 * user interface
 * APIs
-* visualisation application
+
 
 (a graph database using the [Stardog](http://www.stardog.com) software),
+
+## Data transformations 
 
 
 ## Application layer (other apps)
 
 The principle of the approach taken is that a consistent collection of data, available in machine-readable form through an API, can support a range of different applications: each selecting relevant data and presenting it in a way that suits a particular purpose or target audience.
 
-In addition to the main map-based visualisation described in the previous section, other experimental applications have been built on top of the proof of concept data system, including:
+Main visualisation application
 
-* ...list examples
+Paul's data explorer
+
+Other experimental apps from Horizons team?
+
 
 # Data samples
 

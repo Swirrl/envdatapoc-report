@@ -1,9 +1,56 @@
 # Introduction
 ## Purpose of the document
+The purpose of this document is to provide technical information that describes the detail of the architecture for the implementation of the Environmental Integrated Data Infrastructure (e-IDI) proof of concept (PoC).
+
+This document does not contain:
+
+- Functional requirements
+- Evaluation results
+
 ## Background
+
+A lack of standardised protocols and formats for data sharing amongst central and local government agencies,  crown research institutes, private sector and New Zealand public causes large, ongoing costs of time, money and efficiency.  
+
+Almost every agency has differing infrastructure, data formats and channels for data storage and sharing.  The result is that each time data is shared amongst agencies, the data must be collated, cleaned and re-formatted by the receiving party before even basic use or analysis of the data may begin.
+
+The [Natural Resource Sector](http://nrs.mfe.govt.nz/) sought funding to run a proof of concept to use established technologies including web, location intelligence and data linking to connect different data holdings into a single seamless virtual data layer.
+
+The deliverables identified for the proof of concept were:
+
+- *Brokering solution* to transform different data from disparate systems into a harmonised form for integration. 
+- *Registry* for discoverability and accessibility.
+- *Applications* for anlaysis and querying the data and proving reuse of the brokered data. 
+- *Business case*, a write up of lessons learnt, and recommendations for next steps.
+
 ## Glossary of terms
+
+Term|Description
+---|---
+Resource Definition Framework (RDF)| Standard model for data interchange on the Web
+Transformation pipeline|  Converts tabular data into either more tabular data or linked data graphs. (http://grafter.org)
+eXtensible Markup Language (XML) | Designed to store and transport data
+Linked Data | An approach of connecting and publishing structured data from different data sources by using standard Web technologies.
+PublishMyData |A complete end-to-end publishing solution by Swirrl (http://www.swirrl.com/)
+WaterML 2.0 |Standard information model for the representation of water observations data, with the intent of allowing the exchange of such data sets across information systems [http://www.waterml2.org/]
+REC| Dataset from MFE organises information about the physical characteristics of New Zealand's rivers. Individual river sections are mapped according to physical factors such as climate, source of flow for the river water, topography, and geology, and catchment land cover eg, forest, pasture or urban.
+Uniform Resource Identifier (URI) | A single global identifier for a resource on the Web.
+
 ## Acronyms and terminology
+
+---|---
+RDF|Resource Description Framework
+REC|Resource Environment Classification
+WaterML2.0| Water Markup Language version 2.0
+URI|Uniform Resource Identifier
+XML|eXtensible Markup Language
+
 ## Related documents
+
+Document|Date|Description
+---|---|---
+Better Public Service Seed fund Application|  2016|Original application for seeking NZ Treasury funding
+High Level Requirements Specification |Feb 2017|Including functional and non-functional requirements for PoC 
+e-IDI Summary Report|Aug 2017| Summary of PoC results, lessons learnt and recommendations
 
 # Architecture
 

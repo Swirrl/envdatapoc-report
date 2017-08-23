@@ -37,7 +37,8 @@ Uniform Resource Identifier (URI) | A single global identifier for a resource on
 
 ## Acronyms and terminology
 
----|---
+Acronym|Term
+:---|:---
 RDF|Resource Description Framework
 REC|Resource Environment Classification
 WaterML2.0| Water Markup Language version 2.0
@@ -128,43 +129,158 @@ The diagram below illustrates the architecture of the PublishMyData system and h
 ![System architecture](https://github.com/Swirrl/envdatapoc-report/blob/master/system_architecture.png "System architecture diagram")
 
 * data sources
-* data import processes (discussed in more detail in the next section)
+* data import processes
 * database
 * user interface
 * APIs
-
+* visualisation application
 
 (a graph database using the [Stardog](http://www.stardog.com) software),
-
-## Data transformations 
 
 
 ## Application layer (other apps)
 
 The principle of the approach taken is that a consistent collection of data, available in machine-readable form through an API, can support a range of different applications: each selecting relevant data and presenting it in a way that suits a particular purpose or target audience.
 
-Main visualisation application
+In addition to the main map-based visualisation described in the previous section, other experimental applications have been built on top of the proof of concept data system, including:
 
-Paul's data explorer
 
-Other experimental apps from Horizons team?
+In addition to the main map-based visualisation described in the previous section, other experimental applications have been built on top of the proof of concept data system, including:
 
+
+###Horizons Regional Council Application
+
+
+The main purpose of this application was to demonstrate the reuse of the SPARQL endpoints for displaying data at an operational level that showed site information.  
+
+Horizons Regional Council built an application using RShiny. The developer used RShiny and had no previous experience with using SPARQL and linked data.  Within a very short timeframe (approximately 20 minutes) an application was developed using one of the gallery templates.  The R library (SPARQL) writing function was applied to access the SPARQL endpoint.  To obtain the flow of a selected site within a region, a standard R Shiny script for filtering and displaying the data. 
+
+The query function used follows:
+
+    get_flow <- function(source_region,site){
+      source_region <- paste(source_region,"-flow-measurements" ,sep = "")
+      endpoint <- "http://guest:eidipoc@envdatapoc.co.nz/sparql"
+      
+      # create query statement
+      query <- sprintf("
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+      PREFIX sosa: <http://www.w3.org/ns/sosa/>
+      PREFIX qudt: <http://qudt.org/1.1/schema/qudt#>
+      
+      SELECT ?time ?flowrate ?unit
+      WHERE {graph <http://envdatapoc.co.nz/graph/%s> {
+ 	   ?s a sosa:Observation ;
+    	sosa:hasFeatureOfInterest <http://envdatapoc.co.nz/id/measurement-site/%s> ;
+   		sosa:resultTime ?time ;
+    	sosa:hasResult ?result .
+    	?result qudt:numericValue ?flowrate ;
+    	qudt:unit ?unit .
+      }}  ORDER BY ?time
+      " ,source_region, site)
+    
+      # Step 2 - Use SPARQL package to submit query and save results to a data frame
+      qd <- SPARQL(endpoint,query)  
+      flow <- qd$results
+      flow <- na.omit(flow)
+      #plot(y = flow$flowrate, x = flow$time, type = "l")  
+      return(flow)
+    }
+
+- The full RShiny [code](hrc-app.r) for HRC's application.
+
+The following image shows a screenshot of the app with site results of a query.
+
+![RShiny Site Results](hrc-screenshot.jpg)
+
+*Screenshot of Horizons Regional Council Shiny Application*
 
 # Data samples
 
-## Approach to data modelling
+In order to test the PoC solution and validate the architecture, data needed to be provided in real time by the original data source.  
 
-## River monitoring sites
+## Data Applied ##
+Stakeholders participating in the PoC agreed to supply links to their XML  and WFS services.  
 
-## Environment
+Table 2 identifies the data supplied for the PoC.
 
-## Census
+Dataset |Type| Supplier|Format
+:---|:---|:-------------|:---
+**River Monitoring Sites**|Static|	Horizons RC<br>Hawkes Bay RC<br>Environment Canterbury<br>Waikato RC|WFS
+**River Measurements (stage and flow)**	|Dynamic<br>(varies across councils - 5 minutes to daily updates)|Horizons RC<br>Hawkes Bay RC<br>Environment Canterbury<br>Waikato RC|XML/WaterML 2.0<br><br>(via Hilltop &Kisters systems)
+**Water Management Zones (WMZ)**|Static|Horizons RC<br>Hawkes Bay RC<br>Environment Canterbury<br>Waikato RC|WFS
+**Regions**|Static|Statistics New Zealand|	Geodatabase (ESRI)
+**Meshblocks**|Static|Statistics New Zealand|	Geodatabase (ESRI)
+**River Environment Classification  (REC)**|Static|Ministry for Environment|	Geodatabase (ESRI)
+
+*Note: Changes according to frequency identified in transformation pipeline (refer to solution section)
+*Table 2: Data used for the PoC*
+
+## Data Modelling ##
+
+The data used for the PoC already existed for use within the LAWA application, which meant that the it was significantly standardized before being transformed into linked data.  There were still variances between the data elements across datasets.  Since, vocabulary terms were still required to be mapped to the data elements the datasets did not necessarily require standardisation before the transformation process.  
+
+The following lists the datasets where vocabularies were mapped to the data elements within each dataset ([Appendix B]()):
+
+- River Monitoring Sites
+- River Measurements
+- Regions
+- Meshblocks
+- REC
+
+## Transformation Pipelines ##
+
+Required?
+
+## Results ##
+
+This data was linked across regions through queries from the PublishMyData solution and through the API via external applications accessing the endpoint. 
+
+The data feeds do have issues at times, so councils need to have some validation processes to make sure that the data is coming through on regular basis.
+
 
 # Demonstration
 
-## PublishMyData interface
+This section shows demonstrations of the applications for the Proof of Concept (PoC)
 
-## Visualisation interface for Proof of Concept
+NOTE: Do we want video demonstrators here?
+
+
+##Visualisation Interface
+
+The visualisation for the PoC solution developed by Swirrl using RShiny:
+
+<div class="video_container1">
+<video width="640"  height="480" src="eidi-shiny.mp4"  controls preload>
+<p>Or you can <a  href="eidi-shiny.mp4">download the  video</a> instead.</p>
+  </video>  
+</div>
+
+----------
+
+
+##PublishMyData Registry
+
+The PublishMyData linked data registry developed by Swirrl:
+
+<div class="video_container2">
+<video width="640"  height="380" src="eidi-service.mp4"  controls preload>
+<p>Or you can <a  href="eidi-service.mp4">download the video</a> instead.</p>
+  </video> 
+</div>
+
+----------
+
+##Landcare Lab Registry
+
+This registry was used for the PoC to contain terms applied within the LAWA application [(LAWA)](http://lawa.org.nz).  The registry was set up at Landcare Research experimental laboratory registry site which utilises linked data registries.  For more information regarding this, click [here](https://registry.scinfo.org.nz/ui/about)
+
+<div class="video_container3">
+<video width="640"  height="380" src="lab-registry.mp4"  controls preload>
+<p>Or you can <a  href="lab-registry.mp4">download the  video</a> instead.</p>
+  </video> 
+</div>
 
 # Assessment overview
 
@@ -203,6 +319,6 @@ potential value of geosparql enabled database --> probs with generalisation of m
 
 # Appendices
 
-## References
+## A: References
 
-## Glossary and acronyms
+## B: Data Modelling

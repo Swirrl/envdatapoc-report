@@ -192,7 +192,7 @@ The query function used follows:
 
 The following image shows a screenshot of the app with site results of a query.
 
-![RShiny Site Results](hrc-screenshot.jpg)
+![RShiny Site Results](hrc-screenshot.JPG)
 
 *Screenshot of Horizons Regional Council Shiny Application*
 

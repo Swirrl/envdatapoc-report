@@ -91,6 +91,30 @@ Making data available in this form can sometimes require extra effort from a dat
 
 The process of standardisation still needs different people to agree on ways of identifying and describing their data, but Linked Data provides a mechanism for easy re-use of other people's data; and making data interoperable can often build on standards work that has already been done.
 
+## Standard vocabularies
+
+The process of representing data as RDF involves describing the attributes of the entities of interest and the relationships between those entities.  To make data as interoperable and understandable as possible, it is good practice to re-use existing well documented vocabularies of terms wherever possible.  Building on the standardisation and documentation work of others not only improves re-usability of the data, but also saves time.
+
+The most important standard vocabularies used in the POC were:
+
+* SOSA
+* Dublin Core Metadata Initiative
+* DCAT
+* VoID
+* Data Quality Vocabulary
+* QUDT 
+
+Not all attributes and relationships in the data were a good match to pre-existing vocabularies, so a new vocabulary was created for the POC:
+
+* [e-IDI POC ontology](http://envdatapoc.co.nz/def/ontology)
+
+....also concept schemes ...
+
+## Persistent URIs
+
+patterns for creating URIs - follow Paul D's recommendations from UK gov.
+
+how persistent? POC, so not guaranteed to stick around but the identifier sets could be reviewed and refined, moved to a domain with longer term support and could form the basis of future sets of persistent identifiers.
 
 ## Software platform overview
 

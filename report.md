@@ -113,13 +113,14 @@ In addition to the properties and classes described by the vocabularies above, t
 ## Persistent URIs
 
 Part of the Linked Data approach is to assign URIs to entities of interest. These act both as an identifier and a means of retrieving a description of the entity.  
-patterns for creating URIs - follow Paul D's recommendations from UK gov https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector
+
+The prime requirement for a URI is that it uniquely identifies the associated entity, but following predictable patterns for designing URIs makes the data easier for users to understand and makes the job of producing and processing data more reliable.
+
+The approach taken in the PoC was to follow the main points of the UK Government guidance 'Designing URI sets for the UK public sector' (https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector).
 
 For operational systems, it is highly desirable that the URI identifying an entity does not change, and continues to be available online.  This means that people can use the associated data make references to the URI with confidence that it will continue to be available.  See ['Cool URIs don't change'](https://www.w3.org/Provider/Style/URI).
 
-As this is a Proof of Concept project, intended to be experimental and of finite duration, 
-
-how persistent? PoC, so not guaranteed to stick around but the identifier sets could be reviewed and refined, moved to a domain with longer term support and could form the basis of future sets of persistent identifiers.
+As this is a Proof of Concept project, intended to be experimental and of finite duration, persistence of the URIs was not one of the objectives, but the general design of URIs used in the project will be reviewed and can be taken forward for a potential future operational system.
 
 ## Software platform overview
 

@@ -99,20 +99,25 @@ The most important standard vocabularies used in the PoC were:
 
 * [Sensor, Observation, Sample and Actuator ontology](https://www.w3.org/TR/vocab-ssn/) (SOSA, part of the Semantic Sensor Network)
 * [Dublin Core Metadata Initiative](http://dublincore.org/documents/dcmi-terms/)
-* DCAT
-* VoID
-* Data Quality Vocabulary
-* QUDT 
+* [Data Catolog Vocabulary (DCAT)](https://www.w3.org/TR/vocab-dcat/)
+* [Vocabulty of Interlinked Datasets (VoID)](https://www.w3.org/TR/void/)
+* [Data Quality Vocabulary](https://www.w3.org/TR/vocab-dqv/)
+* [QUDT](http://www.qudt.org/)
 
 Not all attributes and relationships in the data were a good match to pre-existing vocabularies, so a new vocabulary was created for the PoC:
 
 * [e-IDI PoC ontology](http://envdatapoc.co.nz/def/ontology)
 
-....also concept schemes ...
+In addition to the properties and classes described by the vocabularies above, the PoC also made use of various concept schemes.  Some of these were already defined, in registries such as the [NEMS Definition Register](https://registry.scinfo.org.nz/lab/nems).  In other cases, new concept schemes were created in the PoC, based on pre-existing glossaries and classifications, for example the [NEMS Glossary](http://envdatapoc.co.nz/lab/nems/def/glossary) and the [River Environment Classification](http://envdatapoc.co.nz/def/concept-scheme/rec).
 
 ## Persistent URIs
 
-patterns for creating URIs - follow Paul D's recommendations from UK gov.
+Part of the Linked Data approach is to assign URIs to entities of interest. These act both as an identifier and a means of retrieving a description of the entity.  
+patterns for creating URIs - follow Paul D's recommendations from UK gov https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector
+
+For operational systems, it is highly desirable that the URI identifying an entity does not change, and continues to be available online.  This means that people can use the associated data make references to the URI with confidence that it will continue to be available.  See ['Cool URIs don't change'](https://www.w3.org/Provider/Style/URI).
+
+As this is a Proof of Concept project, intended to be experimental and of finite duration, 
 
 how persistent? PoC, so not guaranteed to stick around but the identifier sets could be reviewed and refined, moved to a domain with longer term support and could form the basis of future sets of persistent identifiers.
 
